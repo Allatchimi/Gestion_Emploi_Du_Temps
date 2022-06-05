@@ -10,10 +10,10 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse "style=""  id="navbarNavAltMarkup">
           <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="{% url 'acces' %}">Log-In</a>
-              <a class="nav-link active" aria-current="page" href="{% url 'quitter' %}">Log-Out</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'acces' %}">Connexion</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'quitter' %}">Déconnexion</a>
           </div>
         </div>
       </div>
@@ -22,87 +22,107 @@
 
  <!--<h2 class="text-center alert alert-danger"style=" margin-top:10px;"> Gestion Des Emplois du Temps </h2> -->
  <div class="row" style="margin-top: 10px;">
+
      <div class="col-md">
+              <div class="card mt-3 shadow">
          <div class="card card-body">
              <h7>Total Des Filieres</h7>
              <hr>
              <h6 style="text-align: center;padding: 10px">{{total_filiere}}</h6>
          </div>
+              </div>
     </div>
      <div class="col-md">
+          <div class="card mt-3 shadow">
          <div class="card card-body">
              <h7>Total Des Cours Programmé</h7>
              <hr>
              <h6 style="text-align: center;padding: 10px">{{total_cours}}</h6>
          </div>
+          </div>
     </div>
      <div class="col-md">
+          <div class="card mt-3 shadow">
          <div class="card card-body">
              <h7>Total Des Enseignants</h7>
              <hr>
              <h6 style="text-align: center;padding: 10px">{{total_enseignant}}</h6>
          </div>
+          </div>
     </div>
      <div class="col-md">
+          <div class="card mt-3 shadow">
          <div class="card card-body">
              <h7>Total Des Salles</h7>
              <hr>
              <h6 style="text-align: center;padding: 10px">{{total_salle}}</h6>
          </div>
+          </div>
     </div>
-
  </div>
  <br>
  <div class="row">
      <div class="col-md">
+          <div class="card mt-3 shadow">
          <div class="card card-body">
              <h7>Total Des Matiere</h7>
              <hr>
              <h6 style="text-align: center;padding: 10px">{{total_matiere}}</h6>
          </div>
+          </div>
     </div>
      <div class="col-md">
+          <div class="card mt-3 shadow">
          <div class="card card-body">
              <h7>Total Des Groupes</h7>
              <hr>
              <h6 style="text-align: center;padding: 10px">{{total_groupe}}</h6>
          </div>
+          </div>
     </div>
      <div class="col-md">
+          <div class="card mt-3 shadow">
          <div class="card card-body">
              <h7>Total Des Classes</h7>
              <hr>
              <h6 style="text-align: center;padding: 10px">{{total_classe}}</h6>
          </div>
+          </div>
     </div>
      <div class="col-md">
+          <div class="card mt-3 shadow">
          <div class="card card-body">
              <h7>Total Des Types de cours</h7>
              <hr>
              <h6 style="text-align: center;padding: 10px">{{total_type}}</h6>
          </div>
+          </div>
     </div>
-
  </div>
  <br>
  <div class="row">
      <div class="col">
-         <div class="card card-body">
-             <form method="get">
-                 <div>
-                     <button class="btn btn-primary" type="submit" style="margin-right: 10px;">Search</button>
-                    {{myFilter.form}}
-                 </div>
-             </form>
-         </div>
+         <div class="card mt-3 shadow">
+             <div class="card card-body">
+                 <form method="get">
+                     <div>
+                         <button class="btn btn-primary" type="submit" style="margin-right: 10px;">Search</button>
+                        {{myFilter.form}}
+                     </div>
+                 </form>
+             </div>
+          </div>
      </div>
  </div>
+    <br>
 <div class="row">
-    <hr>
-    <div class=" col-md-12">
-        <div style="width: auto; margin: 0 auto;">
-        <h3 class=" alert alert-info" STYLE="text-align: center">Les Emploi du Temps</h3>
-        </div>
+    <div class="card mt-13 shadow">
+    <div class=" card card-body">
+            <div class=" col-md-12">
+                <div style="width: auto; margin: 0 auto;">
+                <h3 class=" alert alert-info shadow" STYLE="text-align: center">Les Emploi du Temps</h3>
+                </div>
+            </div>
         <hr>
         <div class=" card card-body">
             <table class="table tble-sm">
@@ -138,6 +158,7 @@
             <div style="width: auto; margin: 0 auto;">
                 <a class="btn btn-primary btn-sm btn-block" href="{% url 'ajout_cours' %}">Ajouter un cours</a>
             </div>
+        </div>
         </div>
     </div>
 </div>

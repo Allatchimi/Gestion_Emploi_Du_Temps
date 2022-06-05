@@ -4,10 +4,11 @@
 {% include 'main.html' %}
 <div id="content", name='content', class="main">
     <br>
-    <div class="row">
+    <div class="row justify-content-center">
         <div class=" col-md-12">
-            <h4 class=" alert alert-info">Les Cours</h4>
+            <h4 class=" alert alert-info shadow">Les Cours</h4>
             <hr>
+             <div class="card mt-3 shadow">
             <div class=" card card-body">
                 <table class="table tble-sm">
                     <tr>
@@ -42,6 +43,7 @@
                 <div style="width: auto; margin: 0 auto;">
                     <a class="btn btn-primary btn-sm btn-block" href="{% url 'ajout_cours' %}">Ajouter uncours</a>
                 </div>
+            </div>
             </div>
         </div>
     </div>

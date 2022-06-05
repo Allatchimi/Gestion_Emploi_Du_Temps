@@ -1,15 +1,24 @@
 {% extends 'main.html' %}
 
 {% block contenu %}
-    <div class= "col-md-6">
-        <h4 class=" alert alert-info">Ajouter une filiere</h4>
-        <div class="card card-body">
-            <form action="" method="POST">
-                {% csrf_token %}
-                {{form}}
-                <br>
-                <input type="submit" name="Envoyer">
-            </form>
+
+    <div class="row justify-content-center">
+        <div class= "col-md-8">
+            <div class=""style="margin-top: 100px;">
+                <h4 class=" alert alert-info shadow">Ajouter un Cours</h4>
+                <div class="card mt-3 shadow">
+                    <div class="card card-body">
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                            {{form}}
+                            </div>
+                            <br>
+                            <input type="submit" name="Envoyer">
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
