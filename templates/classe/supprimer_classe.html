@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block contenu %}
+    <div class= "col-md-6">
+        <h4 class=" alert alert-info">Supprimer classe</h4>
+        <div class="card card-body">
+            <p>Voulez vous supprimer cette classe ?</p>
+            <form action="{% url 'supprime_classe' item.id %}" method="post">
+                {% csrf_token %}
+                <br>
+                <a class="btn-warning" href="{% url 'classe' %}"></a>
+                <input class="btn btn-danger" type="submit" name="Confirmer">
+            </form>
+        </div>
+    </div>
+{% endblock %}

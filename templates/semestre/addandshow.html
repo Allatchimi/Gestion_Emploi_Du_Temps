@@ -1,0 +1,37 @@
+{% extends 'main.html' %}
+
+{% block contenu %}
+{% include 'main.html' %}
+<div id="content", name='content', class="main">
+    <br>
+    <div class="row">
+        <div class=" col-md-12">
+            <h4 class=" alert alert-info">Les Semestres</h4>
+            <hr>
+            <div class=" card card-body">
+                <table class="table tble-sm">
+                    <tr>
+                        <th>ID</th>
+                        <th>Code</th>
+                        <th>Annee</th>
+                        <th style="width: 10%;">Modifier</th>
+                        <th style="width: 10%;">Supprimer</th>
+                    </tr>
+                    {% for semestre in semestres %}
+                    <tr>
+                         <th>{{semestre.id}}</th>
+                         <th>{{semestre.code}}</th>
+                         <th>{{semestre.id_Annee}}</th>
+                         <th style="width: 10%;"><a class="btn btn-sm btn-info" href="{% url 'modif_semestre' semestre.id %}">Modifier</a></th>
+                         <th style="width: 10%;"><a class="btn btn-sm btn-danger" href="{% url 'supprime_semestre' semestre.id %}">Supprimer</a></th>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <div style="width: auto; margin: 0 auto;">
+                    <a class="btn btn-primary btn-sm btn-block" href="{% url 'ajout_semestre' %}">Ajouter une semestre</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

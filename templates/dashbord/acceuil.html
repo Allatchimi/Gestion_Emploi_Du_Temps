@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+
+{% block contenu %}
+{% include 'main.html' %}
+<div id="content", name='content', class="main">
+ <div class="row">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">GESTION EMPOIS TEMPS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="{% url 'acces' %}">Log-In</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'quitter' %}">Log-Out</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+</div>
+
+ <!--<h2 class="text-center alert alert-danger"style=" margin-top:10px;"> Gestion Des Emplois du Temps </h2> -->
+ <div class="row" style="margin-top: 10px;">
+     <div class="col-md">
+         <div class="card card-body">
+             <h7>Total Des Filieres</h7>
+             <hr>
+             <h6 style="text-align: center;padding: 10px">{{total_filiere}}</h6>
+         </div>
+    </div>
+     <div class="col-md">
+         <div class="card card-body">
+             <h7>Total Des Cours Programmé</h7>
+             <hr>
+             <h6 style="text-align: center;padding: 10px">{{total_cours}}</h6>
+         </div>
+    </div>
+     <div class="col-md">
+         <div class="card card-body">
+             <h7>Total Des Enseignants</h7>
+             <hr>
+             <h6 style="text-align: center;padding: 10px">{{total_enseignant}}</h6>
+         </div>
+    </div>
+     <div class="col-md">
+         <div class="card card-body">
+             <h7>Total Des Salles</h7>
+             <hr>
+             <h6 style="text-align: center;padding: 10px">{{total_salle}}</h6>
+         </div>
+    </div>
+
+ </div>
+ <br>
+ <div class="row">
+     <div class="col-md">
+         <div class="card card-body">
+             <h7>Total Des Matiere</h7>
+             <hr>
+             <h6 style="text-align: center;padding: 10px">{{total_matiere}}</h6>
+         </div>
+    </div>
+     <div class="col-md">
+         <div class="card card-body">
+             <h7>Total Des Groupes</h7>
+             <hr>
+             <h6 style="text-align: center;padding: 10px">{{total_groupe}}</h6>
+         </div>
+    </div>
+     <div class="col-md">
+         <div class="card card-body">
+             <h7>Total Des Classes</h7>
+             <hr>
+             <h6 style="text-align: center;padding: 10px">{{total_classe}}</h6>
+         </div>
+    </div>
+     <div class="col-md">
+         <div class="card card-body">
+             <h7>Total Des Types de cours</h7>
+             <hr>
+             <h6 style="text-align: center;padding: 10px">{{total_type}}</h6>
+         </div>
+    </div>
+
+ </div>
+ <br>
+ <div class="row">
+     <div class="col">
+         <div class="card card-body">
+             <form method="get">
+                 <div>
+                     <button class="btn btn-primary" type="submit" style="margin-right: 10px;">Search</button>
+                    {{myFilter.form}}
+                 </div>
+             </form>
+         </div>
+     </div>
+ </div>
+<div class="row">
+    <hr>
+    <div class=" col-md-12">
+        <div style="width: auto; margin: 0 auto;">
+        <h3 class=" alert alert-info" STYLE="text-align: center">Les Emploi du Temps</h3>
+        </div>
+        <hr>
+        <div class=" card card-body">
+            <table class="table tble-sm">
+                <tr>
+                    <th>ID</th>
+                    <th>Enseignant</th>
+                    <th>Filiere</th>
+                    <th>Salle</th>
+                    <th>Matiere</th>
+                    <th>Groupe</th>
+                    <th>Type</th>
+                    <th>Debut</th>
+                    <th>Fin</th>
+                    <th style="width: 10%;">Modifier</th>
+                    <th style="width: 10%;">Supprimer</th>
+                </tr>
+                {% for cours in courss %}
+                <tr>
+                     <th>{{cours.id}}</th>
+                     <th>{{cours.Enseignant}}</th>
+                     <th>{{cours.Filiere}}</th>
+                     <th>{{cours.Salle}}</th>
+                     <th>{{cours.Matiere}}</th>
+                     <th>{{cours.Groupe}}</th>
+                     <th>{{cours.Type}}</th>
+                     <th>{{cours.debut}}</th>
+                     <th>{{cours.fin}}</th>
+                     <th style="width: 10%;"><a class="btn btn-sm btn-info" href="{% url 'modif_cours' cours.id %}">Modifier</a></th>
+                     <th style="width: 10%;"><a class="btn btn-sm btn-danger" href="{% url 'supprime_cours' cours.id %}">Supprimer</a></th>
+                </tr>
+                {% endfor %}
+            </table>
+            <div style="width: auto; margin: 0 auto;">
+                <a class="btn btn-primary btn-sm btn-block" href="{% url 'ajout_cours' %}">Ajouter un cours</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

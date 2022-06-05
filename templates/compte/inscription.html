@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block contenu %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class=""style="margin-top: 100px;">
+                <div class="card mt-3 shadow">
+                    <div class="card-body">
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <div class="text-center">
+                                <h4>Page D'Inscription </h4>
+                            </div>
+                            <hr>
+                            <div class="form-group">
+                                <label for="" >Username</label>
+                                {{form.username}}
+                            </div>
+                            <div class="form-group">
+                                <label for="" >Email</label>
+                                 {{form.email}}
+                            </div>
+                            <div class="form-group">
+                                <label for="" >Password</label>
+                                {{form.password1}}
+                            </div>
+                            <div class="form-group">
+                                <label for="" > Confirm Password</label>
+                                {{form.password2}}
+                            </div>
+                            {{form.errors}}
+                            <button type="submit" class="btn btn-primary" style="margin:10px;">S'inscription</button>
+                            Avez vous déja un compte ? <a href="{% url 'acces' %}">Connexion</a>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

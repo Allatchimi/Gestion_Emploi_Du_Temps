@@ -1,0 +1,38 @@
+{% extends 'main.html' %}
+   {% block contenu %}
+{% include 'main.html' %}
+<div id="content", name='content', class="main">
+   <br>
+    <div class="row">
+        <div class=" col-md-12">
+            <h4 class=" alert alert-info">Les Salles</h4>
+            <hr>
+            <div class=" card card-body">
+                <table class="table tble-sm">
+                    <tr>
+                        <th>ID</th>
+                        <th>Code</th>
+                        <th>Capacite</th>
+                        <th>Pc</th>
+                        <th>Modifier</th>
+                        <th>Supprimer</th>
+                    </tr>
+                     {% for salle in salles %}
+                    <tr>
+                         <th>{{salle.id}}</th>
+                         <th>{{salle.code}}</th>
+                         <th>{{salle.capacite}}</th>
+                         <th>{{salle.pc}}</th>
+                         <th style="width: 10%;"><a class="btn btn-sm btn-info" href="{% url 'modif_salle' salle.id %}">Modifier</a></th>
+                         <th style="width: 10%;"><a class="btn btn-sm btn-danger" href="{% url 'supprime_salle' salle.id %}">Supprimer</a></th>
+                    </tr>
+                    {% endfor %}
+                </table>
+                  <div style="width: auto; margin: 0 auto;">
+                    <a class="btn btn-primary btn-sm btn-block" href="{% url 'ajout_salle' %}">Ajouter une Salle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

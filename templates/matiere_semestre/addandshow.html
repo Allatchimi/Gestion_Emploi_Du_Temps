@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+
+{% block contenu %}
+{% include 'main.html' %}
+<div id="content", name='content', class="main">
+    <br>
+    <div class="row">
+        <div class=" col-md-12">
+            <h4 class=" alert alert-info">Les Matires De semestre</h4>
+            <hr>
+            <div class=" card card-body">
+                <table class="table tble-sm">
+                    <tr>
+                        <th>ID</th>
+                        <th>Matire</th>
+                        <th>Semestre</th>
+                        <th>Filiere</th>
+                        <th>Type</th>
+                        <th>Heur</th>
+                        <th style="width: 10%;">Modifier</th>
+                        <th style="width: 10%;">Supprimer</th>
+                    </tr>
+                    {% for matiere_semestre in matiere_semestres %}
+                    <tr>
+                         <th>{{matiere_semestre.id}}</th>
+                         <th>{{matiere_semestre.id_Matiere}}</th>
+                         <th>{{matiere_semestre.id_Semestre}}</th>
+                         <th>{{matiere_semestre.id_Filiere}}</th>
+                         <th>{{matiere_semestre.id_Type}}</th>
+                         <th>{{matiere_semestre.heure}}</th>
+                         <th style="width: 10%;"><a class="btn btn-sm btn-info" href="{% url 'modif_matiere_semestre' matiere_semestre.id %}">Modifier</a></th>
+                         <th style="width: 10%;"><a class="btn btn-sm btn-danger" href="{% url 'supprime_matiere_semestre' matiere_semestre.id %}">Supprimer</a></th>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <div style="width: auto; margin: 0 auto;">
+                    <a class="btn btn-primary btn-sm btn-block" href="{% url 'ajout_matiere_semestre' %}">Ajouter un matiere de semestre</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

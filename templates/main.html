@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block contenu %}
+     <div class="sidenav">
+        <a href="{% url 'dashbord' %}">Dashbord</a>
+        <a href="{% url 'cours' %}">Cours</a>
+        <a href="{% url 'enseignant' %}">Enseignant</a>
+        <a href="{% url 'filiére' %}">Filiére</a>
+        <a href="{% url 'matiére' %}">Matiére</a>
+        <a href="{% url 'ann' %}">Annee</a>
+        <a href="{% url 'salle' %}">Salle</a>
+        <a href="{% url 'classe' %}">Classe</a>
+        <a href="{% url 'enseignant_matiere' %}">Enseigner matiere</a>
+        <a href="{% url 'groupe' %}">Groupe</a>
+        <a href="{% url 'matiere_semestre' %}">Matiere de semestre</a>
+        <a href="{% url 'semestre' %}">Semestre</a>
+        <a href="{% url 'type' %}">Type</a>
+    </div>
+{% endblock %}

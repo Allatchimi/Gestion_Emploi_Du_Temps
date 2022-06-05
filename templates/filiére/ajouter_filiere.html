@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block contenu %}
+    <div class= "col-md-6">
+        <h4 class=" alert alert-info">Ajouter une filiere</h4>
+        <div class="card card-body">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form}}
+                <br>
+                <input type="submit" name="Envoyer">
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}
