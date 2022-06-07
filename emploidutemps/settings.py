@@ -93,20 +93,20 @@ WSGI_APPLICATION = 'emploidutemps.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': 'gestion_emploi_temps',
-#        'HOST': '127.0.0.1',
-#        'PORT': '3306',
-#        'USER': 'root',
-#        'PASSWORD': 'Amineallatchimi',
-#   }
-#}
-
 DATABASES = {
-    'default':dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'gestion_emploi_temps',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'USER': 'root',
+        'PASSWORD': 'Amineallatchimi',
+   }
 }
+
+#DATABASES = {
+#   'default':dj_database_url.config()
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
