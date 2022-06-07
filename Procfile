@@ -1,1 +1,1 @@
-web: gunicorn emploidutemps.wsgi --log-file-
+web: gunicorn emploidutemps.wsgi:application --log-file-
